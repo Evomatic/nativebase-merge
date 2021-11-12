@@ -1,23 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Button as ButtonM } from "native-base";
+import { Button as ButtonM, NativeBaseProvider as NativeBaseProviderM } from "native-base";
 
 function Button(props) {
   return (
-     <ButtonM {...props} 
-      _loading={{
-        bg: "amber.400:alpha.70",
-        _text: {
-          color: "coolGray.700",
-        },
-      }}
-      _spinner={{
-        color: "white",
-      }}
-      >
-        {props.children}
-     </ButtonM>
+    // <NativeBaseProviderM>
+     <ButtonM {...props} isDisabled={props.isDisabled} size={props.size}>{props.children}</ButtonM>
+    //  </NativeBaseProviderM>
   );
+  
 }
 
 Button.propTypes = {
@@ -33,4 +24,4 @@ Button.propTypes = {
   label: PropTypes.string,
 };
 
-export { Button as default };
+export default Button;

@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
-import { NativeBaseProvider } from "native-base";
+import { NativeBaseProvider } from "../NativeBaseProvider/NativeBaseProvider";
 
 export default function UXPinWrapper({ children }) {
-  return (<NativeBaseProvider>{children}</NativeBaseProvider>);
+  return children;
 }
